@@ -1,0 +1,388 @@
+/* ! basics ! */
+:root { 
+    --primary-color: #ff69b4; 
+    --accent-color: #4a4a4a; 
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    --transition: all 0.3s ease; 
+    --section-bg: #c2c0c0; 
+    --border-color: #6f6f6f; 
+    --section-border: 12x solid var(--border-color); 
+    --phone-width: 595px;
+    --phone-height: 662px; 
+}
+
+body { 
+    margin: 0; 
+    padding: 0; 
+    min-height: 100vh; 
+    background: url('images/leopard-print3.gif') ; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-family: 'OCR A Std', monospace;
+}
+
+h1 { 
+    font-size: 28px; 
+    text-align: center; 
+    font-family: 'OCR A Std', monospace;
+    font-weight: 7000;
+    height: 7px;
+    margin-top: 4px;
+}
+
+#app { 
+    width: var(--phone-width); 
+    height: var(--phone-height); 
+    background: rgb(230, 230, 230); 
+    margin: 0 auto;
+    padding: 5px;
+    position: relative; 
+    overflow: hidden; 
+    border: 15px solid rgb(53, 10, 42); 
+    border-radius: 8px; 
+}
+/* ^ basics ^ */
+
+/* ! home stuff ! */
+#home-page { 
+    height: calc(100% - 40px); 
+    display: flex; 
+    flex-direction: column; 
+    overflow: hidden; 
+}
+
+.section { 
+    flex: 1; 
+    background: var(--section-bg); 
+    border: var(--section-border); 
+    margin: 20px;
+    padding: 0; 
+    display: flex; 
+    align-items: center; 
+    border-color: #666;
+    border-style: dotted;
+    justify-content: center; 
+    position: relative; 
+    height: 28%; 
+    width: 92%;
+    transition: border-color 0.3s ease; 
+    border-radius: 0px; 
+} 
+
+.section img { 
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover;
+    margin: 0 auto; 
+} 
+
+.section button { 
+    width: 50px; 
+    height: 50px; 
+    border-radius: 5px; 
+    background: rgb(145, 145, 145); 
+    border: none; 
+    color: rgb(200, 200, 200); 
+    font-size: 20px; 
+    cursor: pointer; 
+    margin: 0 10px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+} 
+/* ^ home stuff ^ */
+
+/* ! wardrobe stuff ! */
+#wardrobe-page {
+    height: calc(100% - 60px);
+    overflow-y: auto;
+    padding: 20px;
+    overflow: hidden;
+}
+
+#top-image, #bottom-image, #shoes-image {
+    max-width: 200px; 
+    max-height: 200px; 
+    object-fit: contain; 
+    transition: opacity 0.3s ease;
+    position: static; 
+}
+
+.wardrobe-section {
+    margin-bottom: 35px;
+    height: 20%;
+    width: 101%;
+}
+
+.wardrobe-section h2 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    background-color: #c2c0c0;
+    border-color:#6f6f6f;
+    border-style: dotted;
+    padding: 7px 0;
+    scrollbar-width: thin; 
+    -ms-overflow-style: none;
+}
+
+.wardrobe-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    width: 100%;
+    position: relative;
+}
+
+.wardrobe-header h1 {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.wardrobe-item {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex: 0 0 auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.wardrobe-item-container {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+}
+/* ^ wardrobe stuff ^ */
+
+/* ! buttons ! */
+button { 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 25px; 
+    background-color: var(--primary-color); 
+    color: white; 
+    cursor: pointer; 
+    transition: var(--transition); 
+} 
+
+button:hover { 
+    transform: translateY(-2px); 
+    box-shadow: var(--shadow); 
+} 
+
+/* nav-BTN for page navigation */ 
+nav { 
+    position: fixed; 
+    bottom: 5px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: rgb(213, 212, 212); 
+    padding: 6px;
+    border-color:#6f6f6f;
+    border-style: double;
+    border-radius: 7px; 
+    box-shadow: var(--shadow); 
+    z-index: 1000; 
+} 
+
+.nav-btn { 
+    margin: 0 10px; 
+    opacity: 0.7; 
+    transition: var(--transition); 
+    background-color: #d81067a2;
+    border-radius: 3px; 
+    font-family: 'OCR A Std', monospace;
+} 
+
+.nav-btn.active { 
+    opacity: 1; 
+    background-color: var(--primary-color); 
+} .active:after { content: "\2212"; } 
+
+.upload-btn {
+    margin-right: 10px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    padding: 8px;
+    color:rgb(255, 255, 255);
+    background: rgb(218, 12, 115);
+    margin-left: auto;
+    font-family: 'OCR A Std', monospace;
+} .upload-btn:hover { background-color: #ff138d; }
+
+.help-btn {
+    padding: 8px 16px;
+    background-color: rgb(218, 12, 115);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+} .help-btn:hover { background-color: #ff138d; }
+
+.delete-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding: 0;
+    line-height: 1;
+    font-family: 'OCR A Std', monospace;
+} .delete-btn:hover { background-color: #cc0000; }
+
+.reset-btn {
+    background-color: #ba5757;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+    font-family: 'OCR A Std', monospace;
+} .reset-btn:hover { background-color: #cc0000; }
+
+/* nav BUTTON for image naviagtion */
+.nav-button {
+    scale: 70%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+} .nav-button:hover { transform: scale(1.1); } .nav-button:active { transform: scale(0.95); }
+
+#next-top, #next-bottom, #next-shoes {
+    position: sticky;
+    right: 5px;
+}
+
+.right-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.music-btn {
+    scale: 200%;
+    position: fixed;
+    bottom: 40px;
+    right: 50px;
+    z-index: 1000;
+    background: #ff68c0;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+} .music-btn:hover { transform: scale(1.1); }
+/* ^ buttons ^ */
+
+/* ! custom SweetAlert (swal) styles, for all popups ! */
+.swal-custom {
+    font-family: 'OCR A Std', monospace;
+    border: 3px solid #ff69b4 !important;
+}
+
+.swal-title {
+    color: #ff69b4 !important;
+    font-size: 1.5em !important;
+    font-family: 'OCR A Std', monospace;
+}
+
+.swal-confirm {
+    font-family: 'OCR A Std', monospace;
+    padding: 12px 25px !important;
+    font-size: 1.1em !important;
+    border-radius: 5px !important;
+    background: linear-gradient(45deg, #ff69b4, #ff96cd) !important;
+    border: none !important;
+    box-shadow: 0 3px 10px rgba(255, 105, 180, 0.3) !important;
+}
+
+.swal-cancel {
+    font-family: 'OCR A Std', monospace;
+    padding: 12px 25px !important;
+    font-size: 1.1em !important;
+    border-radius: 5px !important;
+}
+/* ^ custom swal styles ^ */
+
+/* ! cute(r) upload form styles ! */
+.cute-upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.cute-upload-form label {
+    display: block;
+    margin-bottom: 2px;
+    color: #ff69b4;
+    font-weight: bold;
+}
+
+.cute-upload-form .file-input {
+    width: 100%;
+    padding: 8px;
+    border: 2px dashed #ff69b4;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.cute-upload-form .category-select {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #ff69b4;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.cute-upload-form .preview-container {
+    margin-top: 5px;
+    text-align: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    margin: 13px auto;
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+}
+
+.cute-upload-form #upload-preview {
+    max-width: 180px;
+    max-height: 180px;
+    border-radius: 8px;
+    object-fit: contain; 
+    box-shadow: 0 2px 8px rgba(255,105,180,0.2);
+}
+/* ^ cute(r) upload form styles ^ */

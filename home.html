@@ -1,0 +1,90 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Styling App</title> 
+        <link rel="stylesheet" href="styles.css"> 
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head> 
+
+    <audio id="bgMusic" loop>
+        <source src="music/beyonce-diva.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <button id="musicToggle" class="music-btn">🔈</button>
+
+    <body> 
+        <div id="app"> 
+            <!-- style page (Home) --> 
+             <div id="home-page"> 
+                <div style="display: flex; align-items: center; justify-content: center; width: 100%; gap: 10px;">
+                    <h1>What are we feeling today?</h1> 
+                    <img src="images/heart.gif" style="width: 40px; height: 40px;">
+                </div>
+                <div class="section" id="top-section">
+                    <img src="images/prevButton.jpg" id="prev-top" class="nav-button" alt="Previous top">
+                    <img id="top-image" src="images/tops/top1.png" alt="Top">
+                    <img src="images/nextButton.jpg" id="next-top" class="nav-button" alt="Next top">
+                </div>
+                
+                <div class="section" id="bottom-section">
+                    <img src="images/prevButton.jpg" id="prev-bottom" class="nav-button" alt="Previous bottom">
+                    <img id="bottom-image" src="images/bottoms/bottom1.png" alt="Bottom">
+                    <img src="images/nextButton.jpg" id="next-bottom" class="nav-button" alt="Next bottom">
+                </div>
+                
+                <div class="section" id="shoes-section">
+                    <img src="images/prevButton.jpg" id="prev-shoes" class="nav-button" alt="Previous shoes">
+                    <img id="shoes-image" src="images/shoes/shoes1.png" alt="Shoes">
+                    <img src="images/nextButton.jpg" id="next-shoes" class="nav-button" alt="Next shoes">
+                </div>
+            </div> 
+            
+            <!-- wardrobe page --> 
+            <div id="wardrobe-page" style="display: none;">
+                <div class="wardrobe-header">
+                    <button id="reset-btn" class="reset-btn">Reset Wardrobe</button>
+                    <h1>Your Pieces🐾</h1>
+                    <div class="right-buttons">
+                        <button id="upload-btn-wardrobe" class="upload-btn">+ Add Item</button>
+                        <button id="help-btn" class="help-btn">❔</button>
+                    </div>
+                </div>
+
+                <div class="wardrobe-section">
+                    <h2>Tops</h2>
+                    <div class="scroll-container" id="tops">
+                        <!-- images added in scripts.js -->
+                    </div>
+                </div>
+
+                <br/>
+
+                <div class="wardrobe-section">
+                    <h2>Bottoms</h2>
+                    <div class="scroll-container" id="bottoms">
+                        <!-- images added in scripts.js -->
+                    </div>
+                </div>
+
+                <br/>
+                
+                <div class="wardrobe-section">
+                    <h2>Shoes</h2>
+                    <div class="scroll-container" id="shoes">
+                        <!-- images added in scripts.js -->
+                    </div>
+                </div>
+            </div>
+            </div> 
+        </div>
+
+        <nav> 
+            <button id="home-btn" class="nav-btn active" aria-label="Home page">MisMatch</button> 
+            <button id="wardrobe-btn" class="nav-btn" aria-label="Wardrobe page">Wardrobe</button> 
+        </nav>
+
+        <script src="scripts.js"></script> 
+    </body> 
+</html>
